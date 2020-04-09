@@ -1,0 +1,21 @@
+.background-style{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px;
+}
+.modal-box-style{
+    background-color: darkgoldenrod;
+    border-radius: 5px;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+}
+.modal-button-style{
+    position: absolute;
+    bottom: 20px;
+}

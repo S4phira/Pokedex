@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .info-pokemon-box */
+.info-pokemon-box{
+  background-color: #e1f4f3;
+  height: 700px;
+  width: 1300px;
+  margin: auto;
+  margin-top: 5%;
+}
+.name-header-box{
+text-align: center;
+text-transform: uppercase;
+}
+.img-box{
+height: 300px;
+}
+
+/* // Card */
+.pokemonCardList {
+  width: 345,
+}
+.pokemonCardImage {
+  height: 140,
+}
