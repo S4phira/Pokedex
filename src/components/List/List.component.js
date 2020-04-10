@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './listStyle.css';
 import Card from '../Card/Card.component';
 import Sort from '../Sort/Sort.component';
+import Pagination from '../Pagination/Pagination.component';
 
 export default class listAllPokemon extends Component {
 
@@ -14,7 +15,8 @@ export default class listAllPokemon extends Component {
             step : 0,
             Url: 'https://pokeapi.co/api/v2/pokemon/',
             pokemonAllList: [],
-            pokemonList: []
+            pokemonList: [],
+
         }
     }
     componentDidMount(){
@@ -50,6 +52,8 @@ export default class listAllPokemon extends Component {
            
         })
     }
+ 
+
     render() {
         return (
         <React.Fragment>
@@ -68,6 +72,7 @@ export default class listAllPokemon extends Component {
                    
                 </div>
             </form>
+         
           
         </React.Fragment>
         )

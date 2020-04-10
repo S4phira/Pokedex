@@ -6,3 +6,7 @@
 .card-title{
     font-size: 14px;
 }
+.grid-box-card{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
