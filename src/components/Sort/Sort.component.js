@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
-import Card from '../Card/Card.component';
+import Cards from '../Card/CardWithHooks';
 
 export default class Sort extends Component{
     constructor(props){
@@ -28,14 +28,14 @@ export default class Sort extends Component{
     //rosnąco A-Z w góre
         this.state.ListPokemonSort = this.state.pokemonNameList.sort();
         console.log(  this.state.ListPokemonSort);
-        this.state.ListPokemonSort.forEach(pokemon =>
-        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
-      .then(response => response.json())
-      .then((res) => {
-        this.state.pokemonResultList.push(res)
-        this.setState({pokemonResultList: this.state.pokemonResultList})
+      //   this.state.ListPokemonSort.forEach(pokemon =>
+      //   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+      // .then(response => response.json())
+      // .then((res) => {
+      //   this.state.pokemonResultList.push(res)
+      //   this.setState({pokemonResultList: this.state.pokemonResultList})
        
-      }));
+      // }));
 
     }
 
@@ -44,7 +44,7 @@ export default class Sort extends Component{
         this.state.pokemonNameList.sort();
         this.state.ListPokemonSort = this.state.pokemonNameList.reverse();
         console.log(  this.state.ListPokemonSort);
-    }
+    } 
 
     render(){
         return (
@@ -53,13 +53,10 @@ export default class Sort extends Component{
                 <button onClick = {this.DescendingSort}><ArrowDropDownIcon></ArrowDropDownIcon> </button>
                 <button onClick = {this.AscendingSort}><ArrowDropUpIcon></ArrowDropUpIcon></button>
                 <div className = "grid-box-card">
-          {this.state.pokemonResultList.map((r) =>
-              <Card   
-              key = {r.name}
-              name = {r.name}
-              url ={`https://pokeapi.co/api/v2/pokemon/${r.id}`}
-
-              />)}
+          
+            <Cards
+                pokemonList={this.state.pokemonResultList}
+            />
             </div>
             </div>
         )

@@ -1,46 +1,46 @@
-import React, {useState,useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import './modalStyle.css';
 
 
-const Modal = forwardRef(({name, image, id}, ref) => {
+const Modal = forwardRef(({ name, image, id }, ref) => {
 
-        const [display, setDisplay] = useState(false);
+    const [display, setDisplay] = useState(false);
 
-            useImperativeHandle(ref, () => {
-                return {
-                   openModal: () => openModal(),
-                   close: () => closeModal()
-                }
-            })
-   
-        const openModal = () =>{
-            setDisplay(true)
-        };
+    useImperativeHandle(ref, () => {
+        return {
+            openModal: () => openModal(),
+            close: () => closeModal()
+        }
+    })
 
-        const closeModal = () =>{
-            setDisplay(false)
-        };
+    const openModal = () => {
+        setDisplay(true)
+    };
 
-        if(display){
-            return(
+    const closeModal = () => {
+        setDisplay(false)
+    };
 
-                <div className = "modal-wrapper">
-                    <div onClick={closeModal} className = "modal-backdrop">
-                        <div className = "modal-box">
-                            <h1>{name}</h1>
-                            <h5>{id}</h5>
-                            <img src = {image}></img>
-                            
-                        </div>
+    if (display) {
+        return (
+
+            <div className="modal-wrapper">
+                <div onClick={closeModal} className="modal-backdrop">
+                    <div className="modal-box">
+                        <h1>{name}</h1>
+                        <h5>{id}</h5>
+                        <img src={image}></img>
+
                     </div>
                 </div>
-            )
-        }
-        return null;
-    
-       
-    
-    
+            </div>
+        )
     }
-) 
- export default Modal;
+    return null;
+
+
+
+
+}
+)
+export default Modal;
