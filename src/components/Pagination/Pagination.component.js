@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './paginationStyle.css';
 
-const Pagination = ({pokemonListPerPage, totalCards, paginate}) => {
+import Pagination from 'react-bootstrap/Pagination'
+
+const Paginations = ({ pokemonListPerPage, totalCards, paginate, currentPage }) => {
+
     const pageNumbers = [];
-
-    for(let i = 1; i<=Math.ceil(totalCards / pokemonListPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(totalCards / pokemonListPerPage); i++) {
         pageNumbers.push(i);
     }
     return (
-        <nav>
-            <ul className="pagination">
+        <div className="pagination">
+            <Pagination>
                 {pageNumbers.map(number => (
-                    <li key={number} className="page-item">
-                        <a onClick = {() => paginate(number)} href="#" className= "page-link" >
-                            {number}
-                        </a>
-                    </li>
-                 ))}
-            </ul>
-        </nav>
+                    <Pagination.Item onClick={() => paginate(number)} key={number} active={number === currentPage}>
+                        {number}
+                    </Pagination.Item>
+                ))}
+            </Pagination>
+        </div>
     )
 }
 
-export default Pagination;
+export default Paginations;

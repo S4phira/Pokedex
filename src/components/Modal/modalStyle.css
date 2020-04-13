@@ -1,27 +1,110 @@
-.modal-wrapper{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-   z-index: 100;
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.9) !important;
 }
-.modal-backdrop{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-   z-index: 100;
-   background-color: gray;
+
+.modal-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 70%;
+  width: 50%;
+  background-color: white;
+  border-radius: 8px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+      grid-template-areas: "image-box image-box info-box" "image-box image-box stat-box" "abilities-box parameters-box gender-box";
 }
-.modal-box{
-    position: relative;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 70%;
-    width: 60%;
-    background-color: white;
+
+.image-box {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: image-box;
+  background-color: #eeeeee;
+  margin: 5%;
+  border-radius: 8px;
 }
+
+.image-box ul li {
+  list-style-type: none;
+  float: left;
+  margin: 0 7px;
+}
+
+.image-box img {
+  width: 300px;
+  margin-top: 6%;
+}
+
+.image-box .types-color-box {
+  margin-right: 7px;
+  border-radius: 4px;
+}
+
+.info-box {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: info-box;
+  padding-top: 30%;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #222831;
+}
+
+.info-box p {
+  color: #00adb5;
+}
+
+.stat-box {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: stat-box;
+  text-align: left;
+  padding-top: 10%;
+  border: 2px solid #00adb5;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 10%;
+}
+
+.stat-box li {
+  list-style-type: none;
+}
+
+.parameters-box {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: parameters-box;
+  padding-top: 20%;
+}
+
+.abilities-box {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: abilities-box;
+  padding-top: 10%;
+}
+/*# sourceMappingURL=modalStyle.css.map */

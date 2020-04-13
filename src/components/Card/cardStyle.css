@@ -1,12 +1,16 @@
 .main-card{
-    width: 160px;
-    height: 200px;
+    width: 280px;
+    height: 300px;
     margin: 10px;
-}
-.card-title{
-    font-size: 14px;
+    text-align: center;
+    border: 2px solid grey !important;
+    border-radius: 5px!important;
+    
 }
 .grid-box-card{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    font-family: 'Baloo Paaji 2', cursive;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+  
 }

@@ -1,4 +1,7 @@
-.grid-box-card{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+
+.container-search{
+    font-family: 'Muli', sans-serif;
+}
+.btn{
+    background-color: #00adb5!important;
 }

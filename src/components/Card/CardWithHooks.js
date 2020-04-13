@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import InfoPokemon from './InfoPokemon';
 
@@ -10,10 +10,11 @@ const Cards = ({ pokemonList }) => {
         <div className="grid-box-card">
 
             {pokemonList.map(card =>
-                <Card style={{ width: '18rem' }} key={card.name}>
+                <Card className="main-card" key={card.name}>
                     <Card.Body>
+                   
                         <InfoPokemon url={card.url} />
-                        <Card.Title>{card.name}</Card.Title>
+                       
                     </Card.Body>
                 </Card>
             )}

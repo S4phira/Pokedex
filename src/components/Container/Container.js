@@ -1,13 +1,20 @@
-import React from 'react';
-
-import AllList from '../List/List.component';
+import React, { useState } from 'react';
 import Input from '../Input/Input.component';
+import List from '../List/ListWithHooks';
 
+import Button from 'react-bootstrap/Button'
 
-export default function Container () {
+const Container = () => {
+    const [showList, setShowList] = useState(true);
     return (
-        <div className = "info-pokemon-box">
-            <Input />
+        <div className='container-fluid'>
+            <div className="search-container">
+                <Input />
+                <Button className="button-show-list" variant="secondary" onClick={() => setShowList(!showList)}>ZWIŃ LISTĘ</Button>
+            </div>
+            {showList ? <List /> : null}
         </div>
     )
 }
+
+export default Container;

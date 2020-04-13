@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import Container from './components/Container/Container';
 import List from './components/List/ListWithHooks';
+import Container from './components/Container/Container';
 
 function App() {
   return (
-    <div>
-  
-    <List />
-    </div>
-    
+    <Container />
   );
 }
 

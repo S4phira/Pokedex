@@ -1,4 +1,14 @@
-.grid-box-card{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+.form{
+    margin: auto;
+    display: block;
+    padding: 2% 20% 0 20%;
+}
+
+.container-fluid{
+    background-image: url('pokemon-background.jpg');
+    min-height: calc(100vh);
+}
+.container-button{
+    margin: auto;
+    display: table;
 }

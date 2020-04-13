@@ -1,0 +1,33 @@
+.card-title {
+  font-size: 25px;
+  text-align: center;
+}
+
+.info-pokemon {
+  border-radius: 8px;
+}
+
+.info-pokemon img {
+  width: 80%;
+}
+
+.info-pokemon li {
+  list-style-type: none;
+}
+
+.info-pokemon .types-color-box {
+  margin-right: 7px;
+  border-radius: 4px;
+  padding: 0 5% 0 5%;
+}
+
+.type-pokemon {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+/*# sourceMappingURL=infoPokemonStyle.css.map */
