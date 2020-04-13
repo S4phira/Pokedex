@@ -1,8 +1,9 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react';
 import './modalStyle.css';
 
 
-const Modal = forwardRef(({ image, params }, ref) => {
+const Modal = forwardRef(({ image, params, pokemonTypeWeaknesses }, ref) => {
+
 
     const [display, setDisplay] = useState(false);
 
@@ -62,6 +63,7 @@ const Modal = forwardRef(({ image, params }, ref) => {
                 <div onClick={closeModal} className="modal-backdrop">
                     <div className="modal-box">
                         <div class="image-box">
+
                             <img src={image}></img>
                             <ul className="type-pokemon">
                                 {params.types.map(type =>
@@ -71,25 +73,35 @@ const Modal = forwardRef(({ image, params }, ref) => {
                                 )}
                             </ul>
                         </div>
-                        <div class="info-box">
-                            <h1>{params.name}</h1>
+                        <div className="info-box">
+                            <h2>{params.name}</h2>
                             <p>#{setID(params.id)}</p>
                         </div>
-                        <div class="stat-box">
+                        <div className="stat-box">
                             {params.stats.map(stat =>
                                 <li>{stat.stat.name} : {stat.base_stat}</li>
                             )}
                         </div>
-                        <div class="parameters-box">
-                            <p>height: {params.height}</p>
-                            <p>weight: {params.weight}</p>
+                        <div className="parameters-box">
+                            <p>height: {params.height} "</p>
+                            <p>weight: {params.weight} Ibs</p>
                         </div>
-                        <div class="abilities-box">
+                        <div className="abilities-box">
                             <p>Abilities:</p>
-                            {params.abilities.map(ability => <p>{ability.ability.name}</p>)}
+                            {params.abilities.map(ability => <li>{ability.ability.name}</li>)}
+
 
                         </div>
-                        <div class="gender-box"></div>
+                        <div className="weaknesses-box">
+                            <p>WEAKNESSES:</p>
+                            <ul className="type-pokemon">
+                                {pokemonTypeWeaknesses.double_damage_from.map(damage =>
+                                    <div className="types-color-box" style={{ backgroundColor: setColorType(damage.name) }}>
+                                        <li>{damage.name}</li>
+                                    </div>
+                                )}
+                            </ul>
+                        </div>
 
                     </div>
                 </div>

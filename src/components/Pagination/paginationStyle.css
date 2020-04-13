@@ -2,3 +2,9 @@
     margin: auto !important;
 
 }
+ @media screen and (max-width: 1700px) {
+.pagination{
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+ }

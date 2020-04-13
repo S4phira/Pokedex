@@ -13,6 +13,7 @@ const Image = ({ url }) => {
     const [pokemonUrl, setPokemonUrl] = useState([]);
     const [pokemonInfoBase, setPokemonInfoBase] = useState([]);
     const [pokemonType, setPokemonType] = useState([]);
+    const [pokemonTypeWeaknesses, setPokemonTypeWeaknesses] = useState([]);
 
     useEffect(() => {
         fetch(`${url}`)
@@ -21,11 +22,24 @@ const Image = ({ url }) => {
                 setPokemonUrl(res.sprites)
                 setPokemonInfoBase(res)
                 setPokemonType(res.types)
+                res.types.map(type =>
+                    fetch(type.type.url)
+                        .then(response => response.json())
+                        .then((res) => {
+                            setPokemonTypeWeaknesses(res.damage_relations);
+
+                        }
+                        )
+
+                )
             })
 
     }, []);
+
+
+
     const setColorType = (type) => {
-        let color;
+        let color, weaknesses;
         switch (type) {
             case 'water': return color = '#60a0d4';
             case 'poison': return color = '#b97fc9';
@@ -68,7 +82,8 @@ const Image = ({ url }) => {
                 ref={modalRef}
                 params={pokemonInfoBase}
                 image={pokemonUrl.front_default}
-
+                id={pokemonInfoBase.id}
+                pokemonTypeWeaknesses={pokemonTypeWeaknesses}
             />
         </div>
     )

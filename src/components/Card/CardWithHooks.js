@@ -12,9 +12,9 @@ const Cards = ({ pokemonList }) => {
             {pokemonList.map(card =>
                 <Card className="main-card" key={card.name}>
                     <Card.Body>
-                   
+
                         <InfoPokemon url={card.url} />
-                       
+
                     </Card.Body>
                 </Card>
             )}

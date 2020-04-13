@@ -1,7 +1,20 @@
+.container-search {
+  font-family: 'Muli', sans-serif;
+}
 
-.container-search{
-    font-family: 'Muli', sans-serif;
+.btn {
+  background-color: #00adb5 !important;
 }
-.btn{
-    background-color: #00adb5!important;
+
+@media screen and (max-width: 400px) {
+  .input-group-text {
+    font-size: 10px !important;
+  }
+  .btn {
+    font-size: 10px !important;
+  }
+  form {
+    padding: 3% !important;
+  }
 }
+/*# sourceMappingURL=inputStyle.css.map */
