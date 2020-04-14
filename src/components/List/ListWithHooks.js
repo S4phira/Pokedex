@@ -11,10 +11,8 @@ import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 const List = () => {
     const [pokemonList, setPokemonList] = useState([]);
-    const [pokemonListSort, setPokemonListSort] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [pokemonListPerPage] = useState(24);
-    const [showList, setShowList] = useState(true);
 
     //refresh component
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
@@ -30,12 +28,10 @@ const List = () => {
 
     }, []);
 
-    //CURRENT LIST
     const indexOfLastCard = currentPage * pokemonListPerPage;
     const indexOfFirstCard = indexOfLastCard - pokemonListPerPage;
     const currentCard = pokemonList.slice(indexOfFirstCard, indexOfLastCard);
 
-    //CHANGE PAGE
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
@@ -65,7 +61,7 @@ const List = () => {
                 paginate={paginate}
                 currentPage={currentPage}
             />
-        </div >
+        </div>
     );
 }
 

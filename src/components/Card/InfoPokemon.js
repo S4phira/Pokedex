@@ -9,7 +9,6 @@ const Image = ({ url }) => {
         modalRef.current.openModal()
     };
 
-
     const [pokemonUrl, setPokemonUrl] = useState([]);
     const [pokemonInfoBase, setPokemonInfoBase] = useState([]);
     const [pokemonType, setPokemonType] = useState([]);
@@ -30,16 +29,12 @@ const Image = ({ url }) => {
 
                         }
                         )
-
                 )
             })
-
     }, []);
 
-
-
     const setColorType = (type) => {
-        let color, weaknesses;
+        let color;
         switch (type) {
             case 'water': return color = '#60a0d4';
             case 'poison': return color = '#b97fc9';
@@ -61,13 +56,18 @@ const Image = ({ url }) => {
             case 'ice': return color = '#51c4e7';
         }
     }
+    const setText = (data) => {
+        if (data.front_default === null)
+            return <p className="no-data-text">NO DATA</p>
+        else return <img src={data.front_default}></img>
+    }
 
     return (
         <div>
             <div className="info-pokemon" onClick={openModal}>
                 <p className="card-title">{pokemonInfoBase.name}</p>
-                <img src={pokemonUrl.front_default}></img>
 
+                {setText(pokemonUrl)}
                 <ul className="type-pokemon">
                     {pokemonType.map(typePokemon =>
                         <div className="types-color-box" style={{ backgroundColor: setColorType(typePokemon.type.name) }}>
@@ -77,7 +77,6 @@ const Image = ({ url }) => {
                 </ul>
 
             </div>
-
             <Modal
                 ref={modalRef}
                 params={pokemonInfoBase}

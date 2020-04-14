@@ -55,6 +55,12 @@ const Modal = forwardRef(({ image, params, pokemonTypeWeaknesses }, ref) => {
             case 'ice': return color = '#51c4e7';
         }
     }
+    const setText = (data) => {
+        if (data === null)
+            return <p className="no-data-text-modal">NO DATA</p>
+        else return <img src={data}></img>
+    }
+
 
     if (display) {
         return (
@@ -63,8 +69,7 @@ const Modal = forwardRef(({ image, params, pokemonTypeWeaknesses }, ref) => {
                 <div onClick={closeModal} className="modal-backdrop">
                     <div className="modal-box">
                         <div class="image-box">
-
-                            <img src={image}></img>
+                            {setText(image)}
                             <ul className="type-pokemon">
                                 {params.types.map(type =>
                                     <div className="types-color-box" style={{ backgroundColor: setColorType(type.type.name) }}>
